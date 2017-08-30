@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/lcreid/rails-bootstrap-forms.git
+  revision: 0fac4b176e753e2883b6632ab62926981cc88550
+  specs:
+    bootstrap_form (2.7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,6 +70,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.6.1)
     execjs (2.7.0)
+    faker (1.8.4)
+      i18n (~> 0.5)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -192,8 +200,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0.beta)
+  bootstrap_form!
   coffee-rails (~> 4.2)
   devise
+  faker
   hamlit-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -207,6 +217,9 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.15.4

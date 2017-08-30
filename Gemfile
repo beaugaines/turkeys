@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -9,6 +10,7 @@ gem 'rails', '~> 5.1.3'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap_form', github: 'lcreid/rails-bootstrap-forms'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
@@ -17,6 +19,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'hamlit-rails'
 gem 'devise'
+gem 'faker'
 
 group :development do
   gem 'pry-rails'
