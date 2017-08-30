@@ -4,8 +4,13 @@
     %title Turkeys
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
-    = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.justify-content-between
+      = link_to 'Turkeys', root_path, class: 'navbar-brand'
+      %form.form-inline.my-2.my-lg-0
+        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "text"}/
+        %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+    .container
+      %main
+        = yield
