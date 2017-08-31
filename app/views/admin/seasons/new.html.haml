@@ -1,0 +1,10 @@
+%h1 New season
+.row
+  .col
+    = bootstrap_form_for [:admin, @season] do |f|
+      = f.select :name, @options, {}, { class: 'sm-form-element' }
+      = f.number_field :turkeys, label: 'Number of turkeys', class: 'sm-form-element'
+      = f.text_field :start_date, class: 'datepicker-autoclose md-form-element'
+      = f.text_field :pick_up_dates, class: 'datepicker-multi lg-form-element'
+      = f.submit 'Save'
+

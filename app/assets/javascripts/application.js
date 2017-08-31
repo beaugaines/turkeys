@@ -13,6 +13,37 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+
+  const currentYear = (new Date).getFullYear();
+
+  const novStart = `11/20/${currentYear}`;
+  const decStart = `12/20/${currentYear}`;
+
+  $('.datepicker-autoclose').datepicker({
+    autoclose: true,
+    orientation: 'bottom',
+    startDate: `10/15/${currentYear}`,
+    format: 'yyyy/mm/dd'
+  });
+
+  $('.datepicker-multi').datepicker({
+    multidate: true,
+    startDate: novStart
+  });
+
+  $('#season_name').change(function() {
+    $('.datepicker-multi').datepicker('destroy');
+    const season = this.value;
+
+    $('.datepicker-multi').datepicker({
+      multidate: true,
+      startDate: (/Fall/.test(season)) ? novStart : decStart
+    });
+  });
+});
