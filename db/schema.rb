@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170831000733) do
 
   create_table "seasons", force: :cascade do |t|
     t.string "name", null: false
-    t.text "pick_up_dates", array: true
+    t.text "pick_up_dates", default: [], array: true
     t.integer "turkeys", null: false
     t.boolean "active", default: false, null: false
     t.datetime "start_date", null: false

@@ -3,8 +3,9 @@
   .col
     = bootstrap_form_for [:admin, @season] do |f|
       = f.select :name, @options, {}, { class: 'sm-form-element' }
+      .start-date-wrapper
+        = f.text_field :start_date, class: 'datepicker-autoclose md-form-element hidden'
       = f.number_field :turkeys, label: 'Number of turkeys', class: 'sm-form-element'
-      = f.text_field :start_date, class: 'datepicker-autoclose md-form-element'
-      = f.text_field :pick_up_dates, class: 'datepicker-multi lg-form-element'
+      = f.text_field :date_list, class: 'datepicker-multi lg-form-element'
       = f.submit 'Save'
 

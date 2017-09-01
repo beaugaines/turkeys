@@ -5,7 +5,7 @@ class Admin::SeasonsController < Admin::ApplicationController
 
   def new
     @season = Season.new
-    @options = ["Fall #{Date.today.year}", "Winter #{Date.today.year}"]
+    @options = ["-- Select season --", "Fall #{Date.today.year}", "Winter #{Date.today.year}"]
   end
 
   def create
@@ -26,6 +26,6 @@ class Admin::SeasonsController < Admin::ApplicationController
 
   private
   def season_params
-    params.require(:season).permit(:name, :turkeys, :start_date, pick_up_dates: [])
+    params.require(:season).permit(:name, :turkeys, :start_date, :date_list)
   end
 end
