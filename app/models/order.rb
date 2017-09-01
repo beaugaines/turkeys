@@ -2,13 +2,14 @@ class Order < ApplicationRecord
   obfuscate_id
   belongs_to :season
   belongs_to :location
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
   has_many :items, through: :order_items
 
   before_save :calculate_total
   after_create :update_inventory
 
   validates :phone_number, presence: true
+  validates :pick_up_date, presence: true
   accepts_nested_attributes_for :order_items, reject_if: :blank_order_item
 
   private

@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
   def new
-    @season = Season.select(:id, :name).active
+    @season = Season.select(:id, :name, :pick_up_dates).active
+    @pick_up_days = @season.pick_up_dates
     @order = Order.new
     @items = Item.select(:id, :name)
     @order.order_items.build
@@ -26,6 +27,6 @@ class OrdersController < ApplicationController
   private
   def order_params
     params.require(:order).permit(:season_id, :location_id, :first_name, :last_name,
-      :phone_number, order_items_attributes: [:id, :item_id, :quantity])
+      :phone_number, :pick_up_date, order_items_attributes: [:id, :item_id, :quantity])
   end
 end
