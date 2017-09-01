@@ -12,7 +12,7 @@ gem 'puma', '~> 3.7'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'bootstrap_form', github: 'lcreid/rails-bootstrap-forms'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
-                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+                              github: 'Nerian/bootstrap-datepicker-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'hamlit-rails'
 gem 'devise'
 gem 'faker'
+gem 'obfuscate_id', github: 'keyeh/obfuscate_id'
 
 group :development do
   gem 'pry-rails'

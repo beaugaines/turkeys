@@ -1,0 +1,10 @@
+.row
+  .col-8
+    %h2
+      Order for
+      = "#{@order.first_name} #{@order.last_name}"
+    - @order.order_items.each do |oi|
+      %h4= oi.item.name
+      %span
+        Quantity:
+        = oi.quantity

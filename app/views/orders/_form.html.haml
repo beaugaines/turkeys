@@ -1,0 +1,18 @@
+.row
+  .col-8
+    %h1
+      New order for
+      = @season.name
+    = bootstrap_form_for @order do |f|
+      = f.hidden_field :season_id, value: @season.id
+      = f.select :location_id, @locations
+      = f.text_field :first_name
+      = f.text_field :last_name
+      = f.phone_field :phone_number
+      %hr
+      - @items.each do |item|
+        = f.fields_for :order_items do |ff|
+          = ff.hidden_field :item_id, value: item.id
+          %h4= item.name
+          = ff.number_field :quantity
+      = f.submit "Create order", class: 'btn btn-success'

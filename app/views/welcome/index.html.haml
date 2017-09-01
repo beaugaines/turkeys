@@ -1,0 +1,10 @@
+.row
+  .col-8
+    - if @season
+      %h1 We got turkeys!
+      = link_to 'Place order', new_order_path, class: 'btn btn-lg btn-primary'
+    - else
+      %h1
+        We're sold out for the year.  See you in
+        = (Date.current + 1.year).year
+        !
