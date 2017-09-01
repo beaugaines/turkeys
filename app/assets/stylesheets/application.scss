@@ -1,9 +1,31 @@
 /*
  *= require rails_bootstrap_forms
+ *= require bootstrap-datepicker3
 */
 
 @import 'bootstrap';
 
 main {
   margin-top: 6rem;
+}
+
+
+//  =========
+//  = Forms =
+//  =========
+
+.sm-form-element {
+  width: 20%;
+}
+
+.md-form-element {
+  width: 40%;
+}
+
+.lg-form-element {
+  width: 60%;
+}
+
+.start-date-wrapper {
+  display: none;
 }

@@ -1,0 +1,4 @@
+- add customer model, based on phone number and name.  Allow opt out
+  of being stored in DB
+
+- text message confirmation of order.  text message reminder

@@ -1,3 +1,6 @@
 .row
   .col
     %h1 Welcome to the Admin Lounge
+
+    = link_to 'View all seasons', admin_seasons_path, class: 'btn btn-info'
+    = link_to 'Add new season', new_admin_season_path, class: 'btn btn-info'

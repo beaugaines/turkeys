@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830205543) do
+ActiveRecord::Schema.define(version: 20170831000733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "seasons", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "pick_up_dates", default: [], array: true
+    t.integer "turkeys", null: false
+    t.boolean "active", default: false, null: false
+    t.datetime "start_date", null: false
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pick_up_dates"], name: "index_seasons_on_pick_up_dates", using: :gin
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
